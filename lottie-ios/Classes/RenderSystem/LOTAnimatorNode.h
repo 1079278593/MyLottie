@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LOTPlatformCompat.h"
+#import "LOTPlatformCompat.h"//平台适配
 #import "LOTBezierPath.h"
 #import "LOTKeypath.h"
 #import "LOTValueDelegate.h"

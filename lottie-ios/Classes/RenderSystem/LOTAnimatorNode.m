@@ -45,6 +45,8 @@ NSInteger indentation_level = 0;
     if (localUpdate && ENABLE_DEBUG_LOGGING) {
         [self logString:[NSString stringWithFormat:@"%lu %@ Performing update", (unsigned long) self.hash, self.keyname]];
     }
+    
+    //递归
     BOOL inputUpdated = [_inputNode updateWithFrame:frame
                                   withModifierBlock:modifier
                                    forceLocalUpdate:forceUpdate];

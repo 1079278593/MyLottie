@@ -454,12 +454,12 @@
 		3A2EFE86205FB0660061A38B /* RenderNodes */ = {
 			isa = PBXGroup;
 			children = (
+				3A2EFE8C205FB0660061A38B /* LOTRenderGroup.h */,
+				3A2EFE87205FB0660061A38B /* LOTRenderGroup.m */,
 				3A2EFE89205FB0660061A38B /* LOTFillRenderer.h */,
 				3A2EFE8E205FB0660061A38B /* LOTFillRenderer.m */,
 				3A2EFE8B205FB0660061A38B /* LOTRepeaterRenderer.h */,
 				3A2EFE90205FB0660061A38B /* LOTRepeaterRenderer.m */,
-				3A2EFE8C205FB0660061A38B /* LOTRenderGroup.h */,
-				3A2EFE87205FB0660061A38B /* LOTRenderGroup.m */,
 				3A2EFE8A205FB0660061A38B /* LOTStrokeRenderer.h */,
 				3A2EFE8D205FB0660061A38B /* LOTStrokeRenderer.m */,
 				3A2EFE8F205FB0660061A38B /* LOTGradientFillRender.h */,
@@ -512,14 +512,14 @@
 			isa = PBXGroup;
 			children = (
 				3A2EFEB5205FB0660061A38B /* LOTHelpers.h */,
-				3A2EFEB6205FB0660061A38B /* LOTRadialGradientLayer.h */,
-				3A2EFEB7205FB0660061A38B /* CGGeometry+LOTAdditions.m */,
+				3A2EFEBC205FB0660061A38B /* LOTBezierPath.h */,
 				3A2EFEB8205FB0660061A38B /* LOTBezierPath.m */,
 				3A2EFEB9205FB0660061A38B /* UIColor+Expanded.h */,
+				3A2EFEBD205FB0660061A38B /* UIColor+Expanded.m */,
+				3A2EFEB6205FB0660061A38B /* LOTRadialGradientLayer.h */,
 				3A2EFEBA205FB0660061A38B /* LOTRadialGradientLayer.m */,
 				3A2EFEBB205FB0660061A38B /* CGGeometry+LOTAdditions.h */,
-				3A2EFEBC205FB0660061A38B /* LOTBezierPath.h */,
-				3A2EFEBD205FB0660061A38B /* UIColor+Expanded.m */,
+				3A2EFEB7205FB0660061A38B /* CGGeometry+LOTAdditions.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

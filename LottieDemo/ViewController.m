@@ -32,7 +32,7 @@
     self.lotView = [LOTAnimationView animationNamed:@"give_the_thumbs-up"];
     [self.view addSubview:self.lotView];
     self.lotView.loopAnimation = YES;
-    self.lotView.autoReverseAnimation = YES;
+//    self.lotView.autoReverseAnimation = YES;
 //    [self.lotView setValueDelegate:self forKeypath:nil];
     [self.lotView playWithCompletion:^(BOOL animationFinished) {
         // Do Something
