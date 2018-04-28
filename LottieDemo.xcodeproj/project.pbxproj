@@ -79,6 +79,10 @@
 		3A2EFF2F205FB0660061A38B /* LOTMaskContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EFEE0205FB0660061A38B /* LOTMaskContainer.m */; };
 		3A2EFF30205FB0660061A38B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 3A2EFEF1205FB0660061A38B /* .gitkeep */; };
 		3A2EFF32205FB9700061A38B /* give_the_thumbs-up.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A2EFF31205FB9700061A38B /* give_the_thumbs-up.json */; };
+		3A66D61B20901DAB00642249 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66D61720901DAB00642249 /* AudioRecorder.m */; };
+		3A66D61C20901DAB00642249 /* ScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66D61820901DAB00642249 /* ScreenRecorder.m */; };
+		3A6E2DEC2090796A00E01F11 /* hand_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6E2DEB2090796900E01F11 /* hand_1.png */; };
+		3A6E2DEF20907A7300E01F11 /* SVGAnimationView_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6E2DEE20907A7300E01F11 /* SVGAnimationView_2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,6 +251,13 @@
 		3A2EFEE0205FB0660061A38B /* LOTMaskContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LOTMaskContainer.m; sourceTree = "<group>"; };
 		3A2EFEF1205FB0660061A38B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		3A2EFF31205FB9700061A38B /* give_the_thumbs-up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "give_the_thumbs-up.json"; sourceTree = "<group>"; };
+		3A66D61520901DAB00642249 /* AudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
+		3A66D61620901DAB00642249 /* ScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenRecorder.h; sourceTree = "<group>"; };
+		3A66D61720901DAB00642249 /* AudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
+		3A66D61820901DAB00642249 /* ScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenRecorder.m; sourceTree = "<group>"; };
+		3A6E2DEB2090796900E01F11 /* hand_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand_1.png; sourceTree = "<group>"; };
+		3A6E2DED20907A7300E01F11 /* SVGAnimationView_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGAnimationView_2.h; sourceTree = "<group>"; };
+		3A6E2DEE20907A7300E01F11 /* SVGAnimationView_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVGAnimationView_2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,7 +321,9 @@
 		3A2EFE22205FB0300061A38B = {
 			isa = PBXGroup;
 			children = (
+				3A66D60E20901DAB00642249 /* MediaMixture */,
 				3A2EFF31205FB9700061A38B /* give_the_thumbs-up.json */,
+				3A6E2DEB2090796900E01F11 /* hand_1.png */,
 				3A2EFE60205FB0660061A38B /* lottie-ios */,
 				3A2EFE2D205FB0300061A38B /* LottieDemo */,
 				3A2EFE46205FB0300061A38B /* LottieDemoTests */,
@@ -336,6 +349,8 @@
 				3A2EFE2F205FB0300061A38B /* AppDelegate.m */,
 				3A2EFE31205FB0300061A38B /* ViewController.h */,
 				3A2EFE32205FB0300061A38B /* ViewController.m */,
+				3A6E2DED20907A7300E01F11 /* SVGAnimationView_2.h */,
+				3A6E2DEE20907A7300E01F11 /* SVGAnimationView_2.m */,
 				3A2EFE34205FB0300061A38B /* Main.storyboard */,
 				3A2EFE37205FB0300061A38B /* Assets.xcassets */,
 				3A2EFE39205FB0300061A38B /* LaunchScreen.storyboard */,
@@ -414,6 +429,10 @@
 		3A2EFE69205FB0660061A38B /* InterpolatorNodes */ = {
 			isa = PBXGroup;
 			children = (
+				3A2EFE6D205FB0660061A38B /* LOTValueInterpolator.h */,
+				3A2EFE76205FB0660061A38B /* LOTValueInterpolator.m */,
+				3A2EFE70205FB0660061A38B /* LOTTransformInterpolator.h */,
+				3A2EFE77205FB0660061A38B /* LOTTransformInterpolator.m */,
 				3A2EFE6E205FB0660061A38B /* LOTPointInterpolator.h */,
 				3A2EFE75205FB0660061A38B /* LOTPointInterpolator.m */,
 				3A2EFE6F205FB0660061A38B /* LOTNumberInterpolator.h */,
@@ -426,10 +445,6 @@
 				3A2EFE73205FB0660061A38B /* LOTSizeInterpolator.m */,
 				3A2EFE74205FB0660061A38B /* LOTPathInterpolator.h */,
 				3A2EFE6B205FB0660061A38B /* LOTPathInterpolator.m */,
-				3A2EFE6D205FB0660061A38B /* LOTValueInterpolator.h */,
-				3A2EFE76205FB0660061A38B /* LOTValueInterpolator.m */,
-				3A2EFE70205FB0660061A38B /* LOTTransformInterpolator.h */,
-				3A2EFE77205FB0660061A38B /* LOTTransformInterpolator.m */,
 			);
 			path = InterpolatorNodes;
 			sourceTree = "<group>";
@@ -572,6 +587,25 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		3A66D60E20901DAB00642249 /* MediaMixture */ = {
+			isa = PBXGroup;
+			children = (
+				3A66D61420901DAB00642249 /* MediaRecord */,
+			);
+			path = MediaMixture;
+			sourceTree = "<group>";
+		};
+		3A66D61420901DAB00642249 /* MediaRecord */ = {
+			isa = PBXGroup;
+			children = (
+				3A66D61520901DAB00642249 /* AudioRecorder.h */,
+				3A66D61720901DAB00642249 /* AudioRecorder.m */,
+				3A66D61620901DAB00642249 /* ScreenRecorder.h */,
+				3A66D61820901DAB00642249 /* ScreenRecorder.m */,
+			);
+			path = MediaRecord;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -680,6 +714,7 @@
 			files = (
 				3A2EFE3B205FB0300061A38B /* LaunchScreen.storyboard in Resources */,
 				3A2EFE38205FB0300061A38B /* Assets.xcassets in Resources */,
+				3A6E2DEC2090796A00E01F11 /* hand_1.png in Resources */,
 				3A2EFF32205FB9700061A38B /* give_the_thumbs-up.json in Resources */,
 				3A2EFF30205FB0660061A38B /* .gitkeep in Resources */,
 				3A2EFE36205FB0300061A38B /* Main.storyboard in Resources */,
@@ -748,6 +783,8 @@
 				3A2EFF18205FB0660061A38B /* CGGeometry+LOTAdditions.m in Sources */,
 				3A2EFEFD205FB0660061A38B /* LOTPathAnimator.m in Sources */,
 				3A2E0140206CF2450061A38B /* LOTCacheProvider.m in Sources */,
+				3A66D61C20901DAB00642249 /* ScreenRecorder.m in Sources */,
+				3A6E2DEF20907A7300E01F11 /* SVGAnimationView_2.m in Sources */,
 				3A2EFF06205FB0660061A38B /* LOTRepeaterRenderer.m in Sources */,
 				3A2EFF08205FB0660061A38B /* LOTMask.m in Sources */,
 				3A2E0141206CF2450061A38B /* LOTAnimatedControl.m in Sources */,
@@ -772,6 +809,7 @@
 				3A2EFEF8205FB0660061A38B /* LOTValueInterpolator.m in Sources */,
 				3A2E013B206CF2450061A38B /* LOTValueCallback.m in Sources */,
 				3A2EFEF2205FB0660061A38B /* LOTRenderNode.m in Sources */,
+				3A66D61B20901DAB00642249 /* AudioRecorder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

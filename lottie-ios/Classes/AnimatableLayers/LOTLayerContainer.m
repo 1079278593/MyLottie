@@ -168,7 +168,7 @@
 
 //重写覆盖actionForKey:方法,以此返回一个在当前图层(presentationLayer)中有半径起点值的动画.这就可以让动画发生过程中,设置动画效果
 - (id<CAAction>)actionForKey:(NSString *)event {
-    NSLog(@"actionForKey");
+//    NSLog(@"actionForKey");
     if ([event isEqualToString:@"currentFrame"]) {
         CABasicAnimation *theAnimation = [CABasicAnimation
                                           animationWithKeyPath:event];

@@ -12,7 +12,7 @@
 @implementation LOTPointInterpolator
 
 - (CGPoint)pointValueForFrame:(NSNumber *)frame {
-    NSLog(@"point frame:%@", frame);
+//    NSLog(@"point frame:%@", frame);
     CGFloat progress = [self progressForFrame:frame];
     CGPoint returnPoint;
     if (progress == 0) {

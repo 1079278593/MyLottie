@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "Lottie.h"
+#import "ScreenRecorder.h"
+#import "SVGAnimationView_2.h"
 #define KMainScreenHeight [UIScreen mainScreen].bounds.size.height
 #define KMainScreenWidth [UIScreen mainScreen].bounds.size.width
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a]
@@ -15,6 +17,10 @@
 @interface ViewController ()
 @property (nonatomic, strong) UISlider *timeSlider;
 @property (nonatomic, strong) LOTAnimationView *lotView;
+@property (nonatomic, strong) UIButton *button;
+@property (nonatomic ,strong) ScreenRecorder *screenRecorder;
+@property (nonatomic ,strong) UIImageView *imgView;
+@property (nonatomic, strong) SVGAnimationView_2 *svgView;
 
 @end
 
@@ -50,6 +56,12 @@
     
     self.timeSlider.frame = CGRectMake(0, KMainScreenHeight - 20, KMainScreenWidth, 20);
     
+    self.button.frame = CGRectMake(100, 280, 80, 44);
+    self.imgView.frame = CGRectMake(100, 380, 100, 100);
+    self.svgView.frame = CGRectMake(0, 0, 50, 50);
+    self.svgView.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:0.3];
+    
+    self.screenRecorder = [ScreenRecorder sharedInstance];
 }
 
 
@@ -58,16 +70,80 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Event
+- (void)recordEvent:(UIButton *)button {
+    
+    [self timerFire];
+    return;
+    double delayInSeconds = 3.2;
+    dispatch_time_t dismissTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(dismissTime, dispatch_get_main_queue(), ^(void){
+        
+        NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFire) userInfo:nil repeats:NO];
+        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+        
+    });
+    
+}
+
+- (void)timerFire {
+    
+    self.screenRecorder.recorderView = self.svgView;
+    self.screenRecorder.totalTime = 15;
+    self.screenRecorder.expireDirection = UIDeviceOrientationPortrait;
+    [self.screenRecorder startRecording];
+    
+    //监听finishBlock
+    self.screenRecorder.finishBlock = ^(NSString *path) {
+        //录制完成，开始合成录音
+        NSLog(@"录制完成");
+    };
+}
+
 #pragma mark slider event
 - (void)sliderValueChanged:(UISlider *)slider {
     self.lotView.animationProgress = slider.value;
+    self.svgView.time = slider.value*15;
+    
 }
 
 - (void)sliderDragUp:(UISlider *)slider {
     
 }
 
--(UISlider *)timeSlider{
+
+#pragma mark - Getter And Setter
+- (UIButton *)button {
+    if (_button == nil) {
+        _button = [UIButton buttonWithType:UIButtonTypeCustom];
+        _button.backgroundColor = [[UIColor redColor]colorWithAlphaComponent:0.3];
+        [_button setTitle:@"录制" forState:UIControlStateNormal];
+        [_button addTarget:self action:@selector(recordEvent:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_button];
+    }
+    return _button;
+}
+
+- (UIImageView *)imgView {
+    if (_imgView == nil) {
+        _imgView = [[UIImageView alloc]init];
+        _imgView.contentMode = UIViewContentModeScaleAspectFit;
+        _imgView.backgroundColor = [UIColor lightGrayColor];
+        [self.view addSubview:_imgView];
+    }
+    return _imgView;
+}
+
+- (SVGAnimationView_2 *)svgView {
+    
+    if (_svgView == nil) {
+        _svgView = [[SVGAnimationView_2 alloc] init];
+        [self.lotView addSubview:_svgView];
+    }
+    return _svgView;
+}
+
+- (UISlider *)timeSlider{
     
     if (_timeSlider == nil) {
         
